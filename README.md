@@ -1,7 +1,7 @@
 # Doraemon
 
 ####  Set up Environment
-######Building your image
+###### Building your image
 
 ###### switch node mirror to `npm config set registry https://registry.npm.taobao.org` first
 ###### cd into Doraemon folder, at same level with Dockerfile, run below commands
