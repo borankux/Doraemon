@@ -1,0 +1,33 @@
+version: '3'
+networks:
+  internal: {driver: bridge}
+  public: {driver: bridge}
+
+services:
+  api:
+    container_name: 'aemon_api'
+    depends_on: [go-app]
+    expose: [80]
+    image: ''
+    networks: [internal, public]
+    volumes:
+      - 
+  web:
+    container_name: 'aemon_web'
+    depends_on:
+      - go-app
+    expose: [80]
+    networks: [internal, public]
+    volumes:
+      - 
+  mysql:
+    container_name: 'aemon_mysql'
+    expose: [3306]
+    networks: [internal]
+  redis:
+    container_name: 'aemon_redis'
+    networks: ['internal']
+  go-app:
+    container_name: 'aemon_goapp'
+  react-app:
+    container_name: 'react-app'
